@@ -24,7 +24,7 @@ namespace AampTest
         }
         static void GetChildNodes(ParamList node)
         {
-            foreach (var param in node.paramList)
+            foreach (var param in node.childParams)
             {
                 GetChildNodes(param);
             }

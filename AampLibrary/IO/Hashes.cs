@@ -10,6 +10,8 @@ namespace AampLibrary
 {
     class Hashes
     {
+        //Based from https://github.com/jam1garner/aamp2xml
+
         public static Dictionary<uint, string> hashName = new Dictionary<uint, string>();
 
         private static void GenerateHashes()

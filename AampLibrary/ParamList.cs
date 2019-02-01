@@ -28,7 +28,7 @@ namespace AampLibrary
         /// <summary>
         /// Gets the child param list>
         /// </summary>
-        public ParamList[] paramList;
+        public ParamList[] childParams;
 
         /// <summary>
         /// Gets the param object list>
@@ -44,13 +44,13 @@ namespace AampLibrary
             uint ChildListCount = reader.ReadUInt32();
             uint ParamObjectCount = reader.ReadUInt32();
 
-            paramList = new ParamList[ChildListCount];
+            childParams = new ParamList[ChildListCount];
             paramObjects = new ParamObject[ParamObjectCount];
 
             for (int i = 0; i < ChildListCount; i++)
             {
-                paramList[i] = new ParamList();
-                paramList[i].Read(reader);
+                childParams[i] = new ParamList();
+                childParams[i].Read(reader);
             }
             for (int i = 0; i < ParamObjectCount; i++)
             {
@@ -63,7 +63,7 @@ namespace AampLibrary
 
         public void Write(FileWriter writer)
         {
-            int ChildListCount = paramList == null ? 0 : paramList.Length;
+            int ChildListCount = childParams == null ? 0 : childParams.Length;
             int ParamObjectCount = paramObjects == null ? 0 : paramObjects.Length;
 
             long startPosition = writer.Position;
@@ -73,7 +73,7 @@ namespace AampLibrary
             writer.Write(ParamObjectCount);
 
             for (int i = 0; i < ChildListCount; i++)
-                paramList[i].Write(writer);
+                childParams[i].Write(writer);
             
             for (int i = 0; i < ParamObjectCount; i++)
                 paramObjects[i].Write(writer);
