@@ -1,0 +1,12 @@
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\bin\Debug\AampTest.exe.config
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\bin\Debug\AampTest.exe
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\bin\Debug\AampTest.pdb
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\bin\Debug\AampLibrary.dll
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\bin\Debug\Syroot.BinaryData.dll
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\bin\Debug\Syroot.Maths.dll
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\bin\Debug\AampLibrary.pdb
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\obj\Debug\AampTest.csprojAssemblyReference.cache
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\obj\Debug\AampTest.csproj.CoreCompileInputs.cache
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\obj\Debug\AampTest.csproj.CopyComplete
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\obj\Debug\AampTest.exe
+C:\Users\Nathan\source\repos\ClassLibrary1\AampTest\obj\Debug\AampTest.pdb

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AampLibrary", "AampLibrary\AampLibrary.csproj", "{DE1C0417-33A2-4AC0-97C2-61D5C0E3372D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AampTest", "AampTest\AampTest.csproj", "{6AEDD3F6-D6DE-4EDB-B21A-87E0BA87613E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE1C0417-33A2-4AC0-97C2-61D5C0E3372D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1C0417-33A2-4AC0-97C2-61D5C0E3372D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1C0417-33A2-4AC0-97C2-61D5C0E3372D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1C0417-33A2-4AC0-97C2-61D5C0E3372D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AEDD3F6-D6DE-4EDB-B21A-87E0BA87613E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AEDD3F6-D6DE-4EDB-B21A-87E0BA87613E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AEDD3F6-D6DE-4EDB-B21A-87E0BA87613E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AEDD3F6-D6DE-4EDB-B21A-87E0BA87613E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8696CB56-7728-4B7D-A5C6-30023735B081}
+	EndGlobalSection
+EndGlobal
