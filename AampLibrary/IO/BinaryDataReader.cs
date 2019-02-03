@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Syroot.BinaryData;
 using Syroot.Maths;
 
-namespace AampLibrary
+namespace AampV1Library
 {
     //Thanks to Syroot for the IO and methods
     public class FileReader : BinaryDataReader

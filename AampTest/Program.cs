@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AampLibrary;
+using AampV2Library;
 
 namespace AampTest
 {
@@ -11,13 +11,10 @@ namespace AampTest
     {
         static void Main(string[] args)
         {
-            var probeAamp = "course.bglpbd";
+            var probeAamp = "course_bglpbd.szs 0.rarc";
 
             AampFile file = new AampFile(probeAamp);
-
-            var root = file.RootNode;
-            GetChildNodes(root);
-
+            GetChildNodes(file.RootNode);
             file.Save("New.aamp");
 
             Console.Read();
@@ -32,7 +29,6 @@ namespace AampTest
             foreach (var paramObj in node.paramObjects)
             {
                 Console.WriteLine("Object " + paramObj.HashString);
-                Console.WriteLine("Group " + paramObj.GroupHashString);
 
                 foreach (var entry in paramObj.paramEntries)
                 {

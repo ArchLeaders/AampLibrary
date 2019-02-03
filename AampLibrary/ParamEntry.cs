@@ -7,14 +7,14 @@ using System.IO;
 using Syroot.Maths;
 using Syroot.BinaryData;
 
-namespace AampLibrary
+namespace AampV1Library
 {
     public class ParamEntry
     {
         /// <summary>
         /// Gets the hash of the object name>
         /// </summary>
-        public uint Hash;
+        public uint Hash { get; set; }
 
         /// <summary>
         /// Gets the hash converted string of the object name>
@@ -30,19 +30,19 @@ namespace AampLibrary
         /// <summary>
         /// Gets the ParamType of the entry>
         /// </summary>
-        public ParamType ParamType;
+        public ParamType ParamType { get; set; }
 
         /// <summary>
         /// Gets the param object list>
         /// </summary>
-        public ParamEntry[] paramEntries;
+        public ParamEntry[] paramEntries { get; set; }
 
         /// <summary>
         /// Gets or sets the value of the data>
         /// </summary>
-        public object Value = null;
+        public object Value { get; set; }
 
-        public void Read(FileReader reader)
+        internal void Read(FileReader reader)
         {
             long CurrentPosition = reader.Position;
 
@@ -70,7 +70,23 @@ namespace AampLibrary
                 case ParamType.String32: Value = reader.ReadString(32); break;
                 case ParamType.String256: Value = reader.ReadString(256); break;
                 case ParamType.StringRef: Value = reader.ReadString(8); break;
-                default:
+                case ParamType.Curve1:
+                case ParamType.Curve2:
+                case ParamType.Curve3:
+                case ParamType.Curve4:
+                    int curveAmount = ParamType - ParamType.Curve1 + 1;
+
+                    var curves = new Curve[curveAmount];
+                    Value = curves;
+
+                    for (int i = 0; i < curveAmount; i++)
+                    {
+                        curves[i] = new Curve();
+                        curves[i].valueUints = reader.ReadUInt32s(2);
+                        curves[i].valueFloats = reader.ReadSingles(30);
+                    }
+                    break;
+                 default:
                     Value = reader.ReadBytes(DataSize);
                     break;
             }
@@ -78,7 +94,7 @@ namespace AampLibrary
             reader.Seek(CurrentPosition + Size, SeekOrigin.Begin);
         }
 
-        public void Write(FileWriter writer)
+        internal void Write(FileWriter writer)
         {
             long startPosition = writer.Position;
             writer.Write(uint.MaxValue); //Write the size after
@@ -87,7 +103,7 @@ namespace AampLibrary
 
             switch (ParamType)
             {
-                case ParamType.Boolean: writer.WriteBoolean((bool)Value); break;
+                case ParamType.Boolean: writer.Write((bool)Value == false ? (byte)0 : (byte)1); break;
                 case ParamType.Float: writer.Write((float)Value); break;
                 case ParamType.Int: writer.Write((int)Value); break;
                 case ParamType.Vector2F: writer.WriteVector2F((Vector2F)Value); break;
@@ -104,6 +120,19 @@ namespace AampLibrary
                 case ParamType.String256:
                 case ParamType.StringRef:
                     writer.Write((string)Value); break;
+               case ParamType.Curve1:
+                case ParamType.Curve2:
+                case ParamType.Curve3:
+                case ParamType.Curve4:
+                    int curveAmount = ParamType - ParamType.Curve1 + 1;
+
+                    var curves = (Curve[])Value;
+                    for (int i = 0; i < curveAmount; i++)
+                    {
+                        writer.Write(curves[i].valueUints);
+                        writer.Write(curves[i].valueFloats);
+                    }
+                    break;
                 default:
                     writer.Write((byte[])Value);
                     break;

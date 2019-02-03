@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AampLibrary
+namespace AampV1Library
 {
     public class AampFile
     {
@@ -27,6 +27,12 @@ namespace AampLibrary
         public void Save(Stream Stream)
         {
             Write(new FileWriter(Stream));
+        }
+
+        public void ToJson(string FileName)
+        {
+            JsonConverter json = new JsonConverter();
+            json.ToJson(this, FileName);
         }
 
         /// <summary>
@@ -85,14 +91,14 @@ namespace AampLibrary
         internal void Read(FileReader reader)
         {
             reader.CheckSignature("AAMP");
-            unknownValue = reader.ReadUInt32();
+            Version = reader.ReadUInt32();
             Endianness = reader.ReadUInt32();
             reader.CheckByteOrderMark(Endianness);
+
             uint FileSize = reader.ReadUInt32();
-            Version = reader.ReadUInt32();
+            unknownValue = reader.ReadUInt32();
             uint NameLength = reader.ReadUInt32();
             EffectName = reader.ReadString((int)NameLength, Encoding.Default);
-
             RootNode = new ParamList();
             RootNode.Read(reader);
         }

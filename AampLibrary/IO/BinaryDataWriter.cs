@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Syroot.BinaryData;
 using Syroot.Maths;
 
-namespace AampLibrary
+namespace AampV1Library
 {
     public class FileWriter : BinaryDataWriter
     {

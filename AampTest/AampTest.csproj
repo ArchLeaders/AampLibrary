@@ -50,9 +50,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AampLibrary\AampLibrary.csproj">
+    <ProjectReference Include="..\AampLibrary\AampV1Library.csproj">
       <Project>{de1c0417-33a2-4ac0-97c2-61d5c0e3372d}</Project>
-      <Name>AampLibrary</Name>
+      <Name>AampV1Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AampV2Library\AampV2Library.csproj">
+      <Project>{e5ec21bf-6ea5-4c67-b056-67563b83442a}</Project>
+      <Name>AampV2Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace AampLibrary
+namespace AampV1Library
 {
     public class ParamList
     {
@@ -35,7 +35,7 @@ namespace AampLibrary
         /// </summary>
         public ParamObject[] paramObjects;
 
-        public void Read(FileReader reader)
+        internal void Read(FileReader reader)
         {
             long CurrentPosition = reader.Position;
 
@@ -61,7 +61,7 @@ namespace AampLibrary
             reader.Seek(CurrentPosition + Size, SeekOrigin.Begin);
         }
 
-        public void Write(FileWriter writer)
+        internal void Write(FileWriter writer)
         {
             int ChildListCount = childParams == null ? 0 : childParams.Length;
             int ParamObjectCount = paramObjects == null ? 0 : paramObjects.Length;

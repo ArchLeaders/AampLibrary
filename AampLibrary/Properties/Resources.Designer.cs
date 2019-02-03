@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AampLibrary.Properties {
+namespace AampV1Library.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace AampLibrary.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AampLibrary.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AampV1Library.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -105,6 +105,59 @@ namespace AampLibrary.Properties {
         internal static string aamp_hashed_names {
             get {
                 return ResourceManager.GetString("aamp_hashed_names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check_%d
+        ///Name_%d
+        ///Value%d
+        ///State_%d
+        ///_%02d
+        ///.%02d
+        ///%02d
+        ///%02d/
+        ///[%03d]
+        ///%03d
+        ///_%04d
+        ///%04d
+        ///AfterImage_%d
+        ///AngleCenter%d
+        ///AnglePower%d
+        ///AngleWidth%d
+        ///ao%d
+        ///Approach_%02d
+        ///Area_%04d
+        ///Arm_%d
+        ///ASName%d
+        ///AtkBodyName%d
+        ///atlas_texture%d
+        ///bake_area_light_rig%d
+        ///bake_dl_intensity%d
+        ///bake_dl_light%d
+        ///bake_pl_rig%d
+        ///bake_pl_rig_illumi%d
+        ///bake_sl_rig%d
+        ///bake_sl_rig_illumi%d
+        ///BaseAxis%d
+        ///b_%d
+        ///Blade%d.
+        ///BlendMode%d
+        ///BlurReduce%d
+        ///BodyParam_%d
+        ///bone_%d
+        ///Btn%d
+        ///Btn%d_L
+        ///Btn%d_R
+        ///cast_only_group%d
+        ///CategoryDefine_%d
+        ///CenterPosAlphaPow%d
+        ///CenterPosAlphaRate%d
+        ///Cente [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string aamp_hashed_names_numbered {
+            get {
+                return ResourceManager.GetString("aamp_hashed_names_numbered", resourceCulture);
             }
         }
     }

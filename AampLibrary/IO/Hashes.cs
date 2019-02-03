@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace AampLibrary
+namespace AampV1Library
 {
     class Hashes
     {
@@ -22,6 +22,12 @@ namespace AampLibrary
                 if (!hashName.ContainsKey(hash))
                     hashName.Add(hash, hashStr);
             }
+            foreach (string hashStr in Properties.Resources.aamp_hashed_names_numbered.Split('\n'))
+            {
+                uint hash = Crc32.Compute(hashStr);
+                if (!hashName.ContainsKey(hash))
+                    hashName.Add(hash, hashStr);
+            }
         }
 
         public static string GetName(uint hash)
@@ -30,6 +36,10 @@ namespace AampLibrary
                 GenerateHashes();
             string name = null;
             hashName.TryGetValue(hash, out name);
+
+            if (name == null)
+                return hash.ToString();
+
             return name;
         }
     }
