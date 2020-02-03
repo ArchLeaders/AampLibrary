@@ -92,5 +92,8 @@
   <ItemGroup>
     <None Include="aamp_hashed_names_numbered.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Licenses\aamp.py.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
