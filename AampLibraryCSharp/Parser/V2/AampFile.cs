@@ -9,7 +9,7 @@ using AampLibraryCSharp.IO;
 
 namespace AampLibraryCSharp
 {
-    public class AampFileV2 : AampFile
+    internal class AampFileV2 : AampFile
     {
         public AampFileV2()
         {

@@ -8,7 +8,7 @@ using AampLibraryCSharp.IO;
 
 namespace AampLibraryCSharp
 {
-    public class AampFileV1 : AampFile
+    internal class AampFileV1 : AampFile
     {
         public AampFileV1(string FileName)
         {
