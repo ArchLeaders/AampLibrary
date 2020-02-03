@@ -10,7 +10,10 @@ namespace AampLibraryCSharp
 {
     public class Hashes
     {
-        //Based from https://github.com/jam1garner/aamp2xml
+        //From https://github.com/zeldamods/aamp
+        // Copyright 2018 leoetlino <leo@leolam.fr>
+        // Licensed under GPLv2+
+        //https://github.com/zeldamods/aamp/blob/master/LICENSE
 
         public static Dictionary<uint, string> hashName = new Dictionary<uint, string>();
 
