@@ -93,6 +93,33 @@ namespace AampLibraryCSharp
 
         }
 
+        public AampFile ConvertToVersion2()
+        {
+            return new AampFileV2()
+            {
+                Endianness = Endianness,
+                ParameterIOType = ParameterIOType,
+                ParameterIOVersion = 410,
+                RootNode = RootNode,
+                Version = 2,
+                unknownValue = 0,
+            };
+        }
+
+        public AampFile ConvertToVersion1()
+        {
+            return new AampFileV1()
+            {
+                Endianness = Endianness,
+                ParameterIOType = ParameterIOType,
+                ParameterIOVersion = 0,
+                RootNode = RootNode,
+                Version = 1,
+                unknownValue = 0,
+                effectName = Encoding.UTF8.GetBytes(ParameterIOType),
+            };
+        }
+
         public void ToJson(string fileName)
         {
             File.WriteAllText(fileName, ToJson());

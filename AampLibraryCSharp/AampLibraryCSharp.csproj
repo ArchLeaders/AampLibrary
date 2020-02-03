@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IO\StringExtensions.cs" />
-    <Compile Include="Shared\AampFile.cs" />
+    <Compile Include="AampFile.cs" />
     <Compile Include="Shared\crc32.cs" />
     <Compile Include="Shared\Hashes.cs" />
     <Compile Include="Shared\ParamEntry.cs" />
@@ -66,18 +66,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Shared\StringEntry.cs" />
-    <Compile Include="V1\AampFile.cs" />
+    <Compile Include="Parser\V1\AampFile.cs" />
     <Compile Include="IO\BinaryDataReader.cs" />
     <Compile Include="IO\BinaryDataWriter.cs" />
-    <Compile Include="V1\ParamEntry.cs" />
-    <Compile Include="V1\ParamList.cs" />
-    <Compile Include="V1\ParamObject.cs" />
-    <Compile Include="V2\AampFile.cs" />
+    <Compile Include="Parser\V1\ParamEntry.cs" />
+    <Compile Include="Parser\V1\ParamList.cs" />
+    <Compile Include="Parser\V1\ParamObject.cs" />
+    <Compile Include="Parser\V2\AampFile.cs" />
     <Compile Include="Shared\Curve.cs" />
     <Compile Include="Shared\JsonConverter.cs" />
-    <Compile Include="V2\ParamEntry.cs" />
-    <Compile Include="V2\ParamList.cs" />
-    <Compile Include="V2\ParamObject.cs" />
+    <Compile Include="Parser\V2\ParamEntry.cs" />
+    <Compile Include="Parser\V2\ParamList.cs" />
+    <Compile Include="Parser\V2\ParamObject.cs" />
     <Compile Include="Shared\YamlConverter.cs" />
   </ItemGroup>
   <ItemGroup>

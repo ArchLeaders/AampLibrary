@@ -10,7 +10,7 @@ using AampLibraryCSharp.IO;
 
 namespace AampLibraryCSharp
 {
-    public class ParamEntryV2 
+    internal class ParamEntryV2 
     {
         internal static ParamEntry Read(FileReader reader)
         {

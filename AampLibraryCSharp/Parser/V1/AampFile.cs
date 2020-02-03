@@ -10,6 +10,8 @@ namespace AampLibraryCSharp
 {
     internal class AampFileV1 : AampFile
     {
+        public AampFileV1() { }
+
         public AampFileV1(string FileName)
         {
             Read(new FileReader(new FileStream(FileName, FileMode.Open)));
@@ -30,7 +32,7 @@ namespace AampLibraryCSharp
             Write(new FileWriter(Stream));
         }
 
-        private byte[] effectName { get; set; }
+        internal byte[] effectName { get; set; }
 
         internal void Read(FileReader reader)
         {

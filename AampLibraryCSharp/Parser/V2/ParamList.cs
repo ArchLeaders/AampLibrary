@@ -8,7 +8,7 @@ using AampLibraryCSharp.IO;
 
 namespace AampLibraryCSharp
 {
-    public class ParamListV2 
+    internal class ParamListV2 
     {
         internal static ParamList Read(FileReader reader)
         {
