@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AampTest", "AampTest\AampTest.csproj", "{6AEDD3F6-D6DE-4EDB-B21A-87E0BA87613E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAMPEditor", "WindowsFormsApp1\AAMPEditor.csproj", "{B3FECB98-5B82-4223-905F-F35635B88917}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AampLibraryCSharp", "AampLibraryCSharp\AampLibraryCSharp.csproj", "{AF6D06B1-3354-41FB-937F-24F1B53D11FD}"
 EndProject
 Global
