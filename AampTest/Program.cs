@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AampV2Library;
+using AampLibraryCSharp;
 
 namespace AampTest
 {
@@ -11,10 +11,12 @@ namespace AampTest
     {
         static void Main(string[] args)
         {
-            var probeAamp = "course_bglpbd.szs 0.rarc";
+            var aamp = "g3ds_packunslider.bgenv";
 
-            AampFile file = new AampFile(probeAamp);
-            GetChildNodes(file.RootNode);
+            AampFile file = AampFile.LoadFile(aamp);
+            file.ToJson("test.json");
+         //   byte[] yaml = YamlConverter.ToYaml(file);
+         //   System.IO.File.WriteAllBytes("test.yaml", yaml);
             file.Save("New.aamp");
 
             Console.Read();
@@ -32,7 +34,23 @@ namespace AampTest
 
                 foreach (var entry in paramObj.paramEntries)
                 {
-                    Console.WriteLine("Entry " + entry.HashString + " " + entry.Value);
+                    if (entry.Value is Curve[])
+                    {
+                        int c = 0;
+                        Console.WriteLine($"Entry {entry.HashString}");
+                        foreach (var curve in (Curve[])entry.Value)
+                        {
+                            Console.WriteLine($"Curve {c++}");
+
+                            foreach (float va in curve.valueUints)
+                                Console.Write($" {va}");
+                            foreach (float va in curve.valueFloats)
+                                Console.Write($" {va}");
+                            Console.WriteLine($"");
+                        }
+                    }
+                    else
+                        Console.WriteLine("Entry " + entry.HashString + " " + entry.Value);
                 }
             }
         }
