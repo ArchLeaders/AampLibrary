@@ -14,13 +14,19 @@ namespace AampTest
             var aamp = "g3ds_packunslider.bgenv";
 
             AampFile file = AampFile.LoadFile(aamp);
-            file.ToJson("test.json");
-         //   byte[] yaml = YamlConverter.ToYaml(file);
-         //   System.IO.File.WriteAllBytes("test.yaml", yaml);
+            GetChildNodes(file.RootNode);
+            ToYaml(file);
             file.Save("New.aamp");
 
             Console.Read();
         }
+
+        static void ToYaml(AampFile file)
+        {
+            string yaml = YamlConverter.ToYaml(file);
+            System.IO.File.WriteAllText("test.yaml", yaml);
+        }
+
         static void GetChildNodes(ParamList node)
         {
             foreach (var param in node.childParams)
