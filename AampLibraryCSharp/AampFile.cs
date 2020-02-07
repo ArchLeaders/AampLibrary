@@ -18,12 +18,12 @@ namespace AampLibraryCSharp
         /// <summary>
         /// Gets or sets an unknown value/>
         /// </summary>
-        public uint unknownValue { get; set; }
+        public uint unknownValue { get; set; } = 0x01000000;
 
         /// <summary>
         /// Gets the endianness of the file>
         /// </summary>
-        public uint Endianness { get; internal set; }
+        public uint Endianness { get; internal set; } = 0x01000000;
 
         /// <summary>
         /// Gets the version of the file>

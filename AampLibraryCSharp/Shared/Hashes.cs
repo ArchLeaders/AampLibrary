@@ -17,6 +17,8 @@ namespace AampLibraryCSharp
 
         public static Dictionary<uint, string> hashName = new Dictionary<uint, string>();
 
+        public static bool HasString(string name) => hashName.Values.Any(x => x == name);
+
         private static void CheckHash(string hashStr)
         {
             uint hash = Crc32.Compute(hashStr);

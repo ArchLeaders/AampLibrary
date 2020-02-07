@@ -18,7 +18,7 @@ namespace AampLibraryCSharp
         /// <summary>
         /// Gets the hash of the group name>
         /// </summary>
-        public uint GroupHash;
+        public uint GroupHash = 0xCDCDCDCD;
 
         /// <summary>
         /// Gets the hash converted string of the object name>

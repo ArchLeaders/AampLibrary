@@ -35,6 +35,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AampLibrary\bin\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SharpYaml">
+      <HintPath>..\SharpYaml.dll</HintPath>
+    </Reference>
     <Reference Include="Syroot.BinaryData">
       <HintPath>..\Syroot.BinaryData.dll</HintPath>
     </Reference>
@@ -53,6 +56,7 @@
   <ItemGroup>
     <Compile Include="IO\StringExtensions.cs" />
     <Compile Include="AampFile.cs" />
+    <Compile Include="Shared\Color4F.cs" />
     <Compile Include="Shared\crc32.cs" />
     <Compile Include="Shared\Hashes.cs" />
     <Compile Include="Shared\ParamEntry.cs" />

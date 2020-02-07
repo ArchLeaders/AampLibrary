@@ -141,8 +141,6 @@ namespace AampLibraryCSharp
             }
 
             uint DataStart = (uint)writer.Position;
-
-            int dataCount = 0;
             foreach (var entry in DataValues)
             {
                 foreach (var offset in entry.Value)
@@ -155,11 +153,10 @@ namespace AampLibraryCSharp
                     }
                     else
                         offset.WriteOffsetU24(writer, (uint)writer.Position, (ParamEntry)offset.data);
-
-                    dataCount++;
                 }
 
                 writer.Write(entry.Key);
+                writer.Align(4);
             }
 
             uint DataEnd = (uint)writer.Position;
@@ -180,8 +177,6 @@ namespace AampLibraryCSharp
                     writer.Write((byte)0);
                 while (writer.Position % 4 != 0);
             }
-            writer.Align(4);
-
             uint StringDataEnd = (uint)writer.Position;
 
             //Write data size

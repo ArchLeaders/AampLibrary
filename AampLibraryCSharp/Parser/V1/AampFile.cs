@@ -66,8 +66,9 @@ namespace AampLibraryCSharp
             long sizeOffset = writer.Position;
             writer.Write(0); //Write the file size later
             writer.Write(Version);
-            writer.Write(effectName.Length);
-            writer.Write(effectName);
+            writer.Write(AlignUp(ParameterIOType.Length + 1, 4));
+            writer.Write(ParameterIOType, Syroot.BinaryData.BinaryStringFormat.ZeroTerminated);
+            writer.Align(4);
 
             ParamListV1.Write(RootNode, writer);
 
@@ -78,6 +79,11 @@ namespace AampLibraryCSharp
 
             writer.Close();
             writer.Dispose();
+        }
+
+        private static int AlignUp(int n, int align)
+        {
+            return (n + align - 1) & -align;
         }
     }
 }
