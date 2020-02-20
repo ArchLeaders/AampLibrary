@@ -9,6 +9,29 @@ namespace AampLibraryCSharp
 {
     public class ParamObject
     {
+        public T GetEntryValue<T>(string hashName) where T : new()
+        {
+            T instance = new T();
+            foreach (var entry in paramEntries) {
+                if (entry.HashString == hashName) {
+                    if (entry.Value.GetType() == instance.GetType())
+                        return (T)entry.Value;
+                }
+            }
+            return instance;
+        }
+
+        public void SetEntryValue(string hashName, object value)
+        {
+            ParamEntry entry = paramEntries.FirstOrDefault(x => x.HashString == hashName);
+            if (entry != null) {
+                entry.Value = value;
+            }
+            else {
+                entry = new ParamEntry();
+            }
+        }
+
         /// <summary>
         /// Gets the hash of the object name>
         /// </summary>

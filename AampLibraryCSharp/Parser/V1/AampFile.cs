@@ -36,13 +36,13 @@ namespace AampLibraryCSharp
 
         internal void Read(FileReader reader)
         {
+            reader.ByteOrder = Syroot.BinaryData.ByteOrder.LittleEndian;
             reader.CheckSignature("AAMP");
-            unknownValue = reader.ReadUInt32();
+            Version = reader.ReadUInt32();
             Endianness = reader.ReadUInt32();
-            reader.CheckByteOrderMark(Endianness);
 
             uint FileSize = reader.ReadUInt32();
-            Version = reader.ReadUInt32();
+            ParameterIOVersion = reader.ReadUInt32();
             uint NameLength = reader.ReadUInt32();
             long pos = reader.Position;
             effectName = reader.ReadBytes((int)NameLength);
@@ -57,15 +57,14 @@ namespace AampLibraryCSharp
 
         internal void Write(FileWriter writer)
         {
+            writer.ByteOrder = Syroot.BinaryData.ByteOrder.LittleEndian;
             writer.Write(Encoding.ASCII.GetBytes("AAMP"));
-            writer.Write(unknownValue);
+            writer.Write(Version);
             writer.Write(Endianness);
-
-            writer.CheckByteOrderMark(Endianness);
 
             long sizeOffset = writer.Position;
             writer.Write(0); //Write the file size later
-            writer.Write(Version);
+            writer.Write(ParameterIOVersion); 
             writer.Write(AlignUp(ParameterIOType.Length + 1, 4));
             writer.Write(ParameterIOType, Syroot.BinaryData.BinaryStringFormat.ZeroTerminated);
             writer.Align(4);
