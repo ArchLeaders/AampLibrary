@@ -29,6 +29,8 @@ namespace AampLibraryCSharp
             }
             else {
                 entry = new ParamEntry();
+                entry.HashString = hashName;
+                entry.Value = value;
             }
         }
 
