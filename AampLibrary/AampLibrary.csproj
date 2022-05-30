@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AampHashedNames" />
+    <None Remove="AampHashedNamesNumbered" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AampHashedNames" />
+    <EmbeddedResource Include="AampHashedNamesNumbered" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SharpYaml" Version="1.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Syroot.BinaryData">
+      <HintPath>Lib\Syroot.BinaryData.dll</HintPath>
+    </Reference>
+    <Reference Include="Syroot.Maths">
+      <HintPath>Lib\Syroot.Maths.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="aamp_hashed_names.txt" />
+    <Resource Include="aamp_hashed_names_numbered.txt" />
+  </ItemGroup>
+
+</Project>
